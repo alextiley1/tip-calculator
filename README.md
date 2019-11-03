@@ -1,6 +1,7 @@
 # Tip Calculator
 
 This is a react native tip calculator that allows you to quickly and easily work out what your bill should be.
+![Alt text](/screenshots/screenshot/calculator.png "Optional Title")
 
 I created this app to test out react native.
 
