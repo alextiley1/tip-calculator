@@ -32,11 +32,7 @@ const Calculator: React.FC = () => {
               backgroundColor: "#ddd",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
-              shadowRadius: 10,
-              shadowColor: "#000",
-              shadowOpacity: 40,
-              shadowOffset: { width: 100, height: 10 }
+              alignItems: "center"
             }}
           >
             <Text
@@ -81,7 +77,11 @@ const Calculator: React.FC = () => {
               style={{ width: 200, paddingBottom: 30, alignSelf: "center" }}
             />
             <Button
-              style={{ paddingTop: 30, alignSelf: "center" }}
+              style={{
+                alignSelf: "center",
+                backgroundColor: "red",
+                width: 220
+              }}
               raised
               type="solid"
               onPress={handleSubmit}

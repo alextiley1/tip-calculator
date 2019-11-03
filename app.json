@@ -1,17 +1,19 @@
 {
-  "name": "reactNativeTestOne",
-  "displayName": "RN Test One",
+  "name": "tipCalculator",
+  "displayName": "Tip Calculator",
   "expo": {
-    "name": "reactNativeTestOne",
+    "name": "tipCalculator",
     "slug": "expo-template-bare",
     "privacy": "unlisted",
     "sdkVersion": "35.0.0",
     "version": "1.0.0",
     "entryPoint": "node_modules/expo/AppEntry.js",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ]
+    "platforms": ["ios", "android", "web"],
+    "ios": {
+      "bundleIdentifier": "com.alextiley.tipCalculator"
+    },
+    "android": {
+      "package": "com.alextiley.tipCalculator"
+    }
   }
 }
