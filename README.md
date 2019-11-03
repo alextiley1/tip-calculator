@@ -9,6 +9,7 @@ I created this app to test out react native.
 - NodeJs
 - Yarn
 - React Native
+- Expo
 - xCode
 - Android Studio
 - I like to use GenyMotion as my Android emulator
