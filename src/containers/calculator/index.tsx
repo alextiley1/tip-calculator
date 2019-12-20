@@ -6,12 +6,15 @@ import * as Animatable from "react-native-animatable";
 
 const Calculator: React.FC = () => {
   const [answer, setAnswer] = React.useState("0");
+  const [splitAnswer, setSplitAnswer] = React.useState("0");
   return (
     <Formik
-      initialValues={{ bill: 0, tip: 15 }}
-      onSubmit={({ bill, tip }) => {
+      initialValues={{ bill: 0, tip: 15, split: 1 }}
+      onSubmit={({ bill, tip, split }) => {
         const calcAnswer = Math.round(Number(bill) * (tip / 100 + 1));
-        setAnswer(String(calcAnswer));
+        const calcSplitAnswer = Math.round(calcAnswer / split);
+        setAnswer(String(calcSplitAnswer * split));
+        setSplitAnswer(String(calcSplitAnswer));
       }}
     >
       {({ handleChange, handleSubmit, values, setFieldValue }) => (
@@ -27,7 +30,7 @@ const Calculator: React.FC = () => {
         >
           <Card
             containerStyle={{
-              width: 250,
+              width: 300,
               borderRadius: 20,
               backgroundColor: "#ddd",
               display: "flex",
@@ -43,6 +46,8 @@ const Calculator: React.FC = () => {
             <Input
               onChangeText={handleChange("bill")}
               leftIcon={<Text>R</Text>}
+              textContentType="telephoneNumber"
+              keyboardType={"numeric"}
               inputContainerStyle={{ width: 200, alignSelf: "center" }}
             />
             <Text
@@ -73,6 +78,36 @@ const Calculator: React.FC = () => {
               maximumValue={25}
               minimumValue={10}
               step={5}
+              thumbTintColor="#3396FC"
+              style={{ width: 200, paddingBottom: 30, alignSelf: "center" }}
+            />
+            <Text
+              style={{
+                fontSize: 13,
+                paddingTop: 30,
+                alignSelf: "center",
+                color: "#004286"
+              }}
+            >
+              Split:{" "}
+              <Text
+                style={{
+                  fontSize: 13,
+                  paddingTop: 30,
+                  alignSelf: "center",
+                  color: "#0055AD"
+                }}
+              >
+                {values.split}
+              </Text>
+            </Text>
+            <Slider
+              value={values.split}
+              onValueChange={e => setFieldValue("split", e)}
+              animationType="spring"
+              maximumValue={8}
+              minimumValue={1}
+              step={1}
               thumbTintColor="#3396FC"
               style={{ width: 200, paddingBottom: 30, alignSelf: "center" }}
             />
@@ -111,6 +146,22 @@ const Calculator: React.FC = () => {
             >
               R{answer}
             </Animatable.Text>
+            {values.split > 1 && splitAnswer !== "0" ? (
+              <Animatable.Text
+                animation="pulse"
+                easing="ease-out"
+                iterationCount="infinite"
+                style={{
+                  fontSize: 15,
+                  paddingTop: 30,
+                  alignSelf: "center",
+                  color: "#004286",
+                  textAlign: "center"
+                }}
+              >
+                Each: R{splitAnswer}
+              </Animatable.Text>
+            ) : null}
           </Card>
         </View>
       )}
