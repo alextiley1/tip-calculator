@@ -1,14 +1,11 @@
 {
-  "name": "tipCalculator",
+  "name": "tipcalculator",
   "displayName": "Tip Calculator",
   "expo": {
-    "name": "tipCalculator",
-    "slug": "expo-template-bare",
-    "privacy": "unlisted",
+    "name": "tipcalculator",
+    "icon": "./src/assets/appIcon/tipCalcAppIcon.png",
+    "slug": "tip-calculator",
     "sdkVersion": "35.0.0",
-    "version": "1.0.0",
-    "entryPoint": "node_modules/expo/AppEntry.js",
-    "platforms": ["ios", "android", "web"],
     "ios": {
       "bundleIdentifier": "com.alextiley.tipCalculator"
     },

@@ -1,4 +1,4 @@
-package com.reactnativetestone.generated;
+package com.alextiley.tipcalculator.generated;
 
 import java.util.Arrays;
 import java.util.List;

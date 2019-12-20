@@ -33,7 +33,6 @@ export default function App() {
           flex: 1,
           padding: 15,
           alignItems: "center",
-          // borderRadius: 5,
           width: "100%",
           height: "100%"
         }}
