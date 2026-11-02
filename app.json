@@ -1,16 +1,20 @@
 {
-  "name": "tipcalculator",
-  "displayName": "Tip Calculator",
   "expo": {
-    "name": "tipcalculator",
-    "icon": "./src/assets/appIcon/tipCalcAppIcon.png",
+    "name": "Tip Calculator",
     "slug": "tip-calculator",
-    "sdkVersion": "35.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/appIcon/tipCalcAppIcon.png",
+    "userInterfaceStyle": "light",
     "ios": {
-      "bundleIdentifier": "com.alextiley.tipCalculator"
+      "bundleIdentifier": "com.alextiley.tipCalculator",
+      "supportsTablet": true
     },
     "android": {
       "package": "com.alextiley.tipCalculator"
+    },
+    "web": {
+      "bundler": "metro"
     }
   }
 }

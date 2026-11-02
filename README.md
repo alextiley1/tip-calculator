@@ -4,23 +4,20 @@ This is a react native tip calculator that allows you to quickly and easily work
 
 I created this app to test out react native.
 
-![screenshot](/screenshots/calculator.png "screenshot")
+![screenshot](/screenshots/calculator.png 'screenshot')
 
-## Dependancies
+## Dependencies
 
-- NodeJs
-- Yarn
-- React Native
-- Expo
-- xCode
-- Android Studio
-- I like to use GenyMotion as my Android emulator
+- Node.js 20.19+ (22 LTS recommended)
+- Yarn 1.x
+- [Expo](https://docs.expo.dev/) (SDK 58, React Native 0.88, React 19)
+- Xcode (for iOS builds) / Android Studio (for Android builds)
 
 ## Installation
 
 - [Clone](https://github.com/alextiley1/tip-calculator.git) this repository to your machine
 
-- Install dependancies:
+- Install dependencies:
 
 ```bash
 yarn
@@ -28,29 +25,40 @@ yarn
 
 ## Usage
 
-### Android
-
-- Ensure you have an Android emulator running or a connected device, then run:
+### Development server
 
 ```bash
-yarn android
+yarn start
 ```
 
-if you are using Genymotion as your emulator, you need to ensure your android SDK is your global sdk and not Genymotions flavour, to change this open GenyMotion's preferences, go to the ADB tab and update the path to `/Users/[your-username]/Library/Android/sdk`, if you are on linux or a mac, any you should be good to go.
+Scan the QR code with Expo Go, or press `a` / `i` / `w` to open Android, iOS or web.
 
-### iOS
+### Native builds
 
-- Ensure you have an iOS emulator running or a connected device, then run:
+The `android/` and `ios/` folders are generated on demand by `expo prebuild` and are not committed.
 
 ```bash
-yarn ios
+yarn android   # builds and runs on an Android emulator / device
+yarn ios       # builds and runs on an iOS simulator / device
+```
+
+### Web
+
+```bash
+yarn web
+```
+
+### Checks
+
+```bash
+yarn test       # Jest + React Native Testing Library
+yarn lint       # ESLint (eslint-config-expo + Prettier)
+yarn typecheck  # TypeScript
 ```
 
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Testing: TODO
 
 ## License
 
