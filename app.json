@@ -11,7 +11,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.alextiley.tipCalculator"
+      "package": "com.alextiley.tipcalculator"
     },
     "web": {
       "bundler": "metro"

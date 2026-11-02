@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Text } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styled, ThemeProvider } from 'styled-components/native';
 import { ColorProps, color } from 'styled-system';
 
@@ -30,21 +30,22 @@ export default function App() {
     <SafeAreaProvider>
       <ThemeProvider theme={theme.colors}>
         <StatusBar style="light" />
-        <LinearGradient
-          colors={['#3396FC', '#004286']}
-          style={{
-            display: 'flex',
-            flex: 1,
-            padding: 15,
-            alignItems: 'center',
-            width: '100%',
-            height: '100%',
-          }}>
-          <AppContainer>
-            <Heading />
-            <Calculator />
-          </AppContainer>
-          <Text>v{pkg.version}</Text>
+        <LinearGradient colors={['#3396FC', '#004286']} style={{ flex: 1 }}>
+          {/* The gradient fills the screen edge to edge; the content stays clear of the
+              status bar, notch and navigation / home-indicator areas. */}
+          <SafeAreaView
+            style={{
+              flex: 1,
+              padding: 15,
+              alignItems: 'center',
+              width: '100%',
+            }}>
+            <AppContainer>
+              <Heading />
+              <Calculator />
+            </AppContainer>
+            <Text>v{pkg.version}</Text>
+          </SafeAreaView>
         </LinearGradient>
       </ThemeProvider>
     </SafeAreaProvider>
